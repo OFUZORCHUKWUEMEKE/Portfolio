@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/Header';
+import { Expo, gsap, Power3 } from 'gsap'
+import Hero from './components/Hero';
+import './App.css'
+import About from './components/Aboutme';
+import Projects from './components/Projects';
 function App() {
+  const t1 = gsap.timeline()
+  const ease = Power3.easeInOut()
+
+
+  // #f5f0ec;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="bg-[#FBF2CF] overflow-hidden">
+        <div className='overflow-hidden bg-[#FBF2CF] p-3'>
+          <Header timeline={t1} ease={ease} />
+          <Hero timeline={t1} ease={ease} />
+        </div>
+
+        <About />
+        <Projects/>
+      </div>
+    </>
+
   );
 }
 
